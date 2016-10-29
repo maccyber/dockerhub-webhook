@@ -16,7 +16,7 @@ dockerhub-webhook listens to incoming HTTP requests from hub.docker.com and trig
 * Scripts can trigger docker or docker-compose
 
 # Create secret
-Create a secret token with ``openssl``, ``uuidgen`` or something else. Remember not to use any slashes since it's going to be used in the URL.
+Create a secret token with ``openssl``, ``uuidgen`` or something else. Don't use any slashes since token is going to be used in the URL.
 
 ```sh
 export TOKEN=$(openssl rand -base64 30 | sed 's=/=\\/=g')
@@ -42,12 +42,12 @@ npm i
 vim config/index.js
 ```
 
-### Edit webhooks and scripts
+### Edit scripts
 ```sh
 vim scripts/index.js
 ```
 
-### Test
+### Start
 ```sh
 npm start
 ```
