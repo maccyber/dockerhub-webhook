@@ -1,6 +1,6 @@
 {
   "name": "dockerhub-webhook",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Docker hub webhook",
   "license": "MIT",
   "author": {
@@ -37,7 +37,7 @@
     "url": "http://github.com/maccyber/dockerhub-webhook.git"
   },
   "bugs": {
-    "url": "http://github.com/telemark/dockerhub-webhook/issues"
+    "url": "http://github.com/maccyber/dockerhub-webhook/issues"
   },
   "devDependencies": {
     "coveralls": "2.11.12",
