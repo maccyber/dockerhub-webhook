@@ -102,4 +102,4 @@ Replace ``example.com`` with the domain of your server or it's ip address.
 
 Replace ``abc123`` with your secret token.
 
-docker-hook listens to port 3000. 
+docker-hook listens to port 3000 by default. 
