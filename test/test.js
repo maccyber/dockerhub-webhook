@@ -68,6 +68,32 @@ tap.test('Valid dockerhub JSON', (t) => {
   })
 })
 
+tap.test('dockerhubCallback missing options', (t) => {
+  const options = false
+  dockerhubCallback(options, (err) => {
+    tap.equal(err.message, 'Missing required input: options', 'Missing options ok')
+    t.end()
+  })
+})
+
+tap.test('dockerhubCallback missing options.callbackUrl', (t) => {
+  const options = {}
+  dockerhubCallback(options, (err) => {
+    tap.equal(err.message, 'Missing required input: options.callbackUrl', 'Missing options.callbackUrl ok')
+    t.end()
+  })
+})
+
+tap.test('dockerhubCallback invalid URI', (t) => {
+  const options = {
+    callbackUrl: 'wrongurl'
+  }
+  dockerhubCallback(options, (err) => {
+    tap.equal(err.message, `Invalid URI "${options.callbackUrl}"`, 'Wrong URL ok')
+    t.end()
+  })
+})
+
 tap.test('dockerhubCallback', (t) => {
   const options = {
     callbackUrl: 'https://maccyber.io/api/test'
