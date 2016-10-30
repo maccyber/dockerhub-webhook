@@ -4,18 +4,19 @@
 
 # dockerhub-webhook
 
-Automatic Docker Deployment via [Webhooks](https://docs.docker.com/docker-hub/builds/#webhooks).
+Automatic [Docker](https://www.docker.com) deployment with [Webhooks](https://docs.docker.com/docker-hub/builds/#webhooks).
 
-dockerhub-webhook listens to incoming HTTP requests from hub.docker.com and triggers your specified script.
+dockerhub-webhook listens to incoming HTTP POST-requests from hub.docker.com and triggers your specified script(s).
 
 ## Features
 
 * Lightweight
 * Pretty simple setup process
+* Can be runned in a docker container
 * Supports updating multiple docker images
 * Scripts can trigger docker or docker-compose
 
-# Create secret
+# Create a token
 Create a secret token with ``openssl``, ``uuidgen`` or something else. Don't use any slashes since token is going to be used in the URL.
 
 ```sh
@@ -81,7 +82,7 @@ Start with
 docker run -d \
   -p 3000:3000 \
   -e SERVER_PORT=3000 \
-  -e TOKEN=abc123 \
+  -e TOKEN=${token} \
   -e ROUTE=/api \
   -v ${PWD}/scripts:/src/scripts \
   -v /var/run/docker.sock:/var/run/docker.sock \
@@ -97,6 +98,8 @@ Add a webhook like on the following image.
 
 ![alt tag](dockerhook.png)
 
-``example.com`` can be the domain of your server or its ip address.
+Replace ``example.com`` with the domain of your server or it's ip address.
 
-docker-hook listens to port 3000. Please replace abc123 with your safe auth-token.
+Replace ``abc123`` with your secret token.
+
+docker-hook listens to port 3000. 
