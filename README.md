@@ -54,7 +54,7 @@ See [scripts/index.js](scripts/index.js)
 vim scripts/index.js
 ```
 
-### Start
+### Start dockerhub-webhook
 ```sh
 npm start
 ```
