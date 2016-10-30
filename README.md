@@ -39,11 +39,17 @@ npm i
 ```
 
 ### Edit config
+
+See [config/index.js](config/index.js)
+
 ```sh
 vim config/index.js
 ```
 
-### Edit scripts
+### Configure repos and scripts
+
+See [scripts/index.js](scripts/index.js)
+
 ```sh
 vim scripts/index.js
 ```
