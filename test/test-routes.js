@@ -25,14 +25,55 @@ tap.test('Not found', (t) => {
   })
 })
 
-tap.test('Invalid token or dockerhub JSON', (t) => {
+tap.test('Invalid token', (t) => {
+  const options = {
+    method: 'POST',
+    url: `${config.route}/wrongtoken`,
+    payload: {}
+  }
+  server.inject(options, (res) => {
+    t.equal(res.statusCode, 400, 'Status code ok')
+    t.equal(res.result.message, 'Invalid token', 'Error message ok')
+    t.end()
+  })
+})
+
+tap.test('Missing payload', (t) => {
+  const options = {
+    method: 'POST',
+    url: `${config.route}/${config.token}`
+  }
+  server.inject(options, (res) => {
+    t.equal(res.statusCode, 400, 'Status code ok')
+    t.equal(res.result.message, 'Missing payload', 'Error message ok')
+    t.end()
+  })
+})
+
+tap.test('Missing payload.repository', (t) => {
   const options = {
     method: 'POST',
     url: `${config.route}/${config.token}`,
     payload: {}
   }
   server.inject(options, (res) => {
-    t.equal(res.statusCode, 400, 'Invalid token or dockerhub JSON ok')
+    t.equal(res.statusCode, 400, 'Status code ok')
+    t.equal(res.result.message, 'Missing payload.repository', 'Error message ok')
+    t.end()
+  })
+})
+
+tap.test('Missing payload.repository.name', (t) => {
+  const options = {
+    method: 'POST',
+    url: `${config.route}/${config.token}`,
+    payload: {
+      repository: {}
+    }
+  }
+  server.inject(options, (res) => {
+    t.equal(res.statusCode, 400, 'Status code ok')
+    t.equal(res.result.message, 'Missing payload.repository.name', 'Error message ok')
     t.end()
   })
 })
@@ -46,7 +87,8 @@ tap.test('does not exist in scripts/index.js', (t) => {
     payload: file
   }
   server.inject(options, (res) => {
-    t.equal(res.statusCode, 400, 'Repo is not configured config ok')
+    t.equal(res.statusCode, 400, 'Status code ok')
+    t.equal(res.result.message, `${file.repository.name} does not exist in scripts/index.js`, 'Error message ok')
     t.end()
   })
 })
