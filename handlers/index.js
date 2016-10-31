@@ -1,8 +1,8 @@
 'use strict'
 
-const config = require('../config')
-const runScript = require('../lib/run-script')
 const Boom = require('boom')
+const config = require('../config')
+const hookAction = require('../lib/hook-action')
 
 module.exports = (request, reply) => {
   const hooks = require('../scripts')
@@ -25,15 +25,23 @@ module.exports = (request, reply) => {
     request.log(['debug'], err)
     reply(Boom.badRequest(err))
   } else {
+    reply(payload.repository.name).code(204)
+
     request.log(['debug'], 'Payload from docker hub:')
     request.log(['debug'], payload)
-    request.log(['debug'], `Updating repo: ${payload.repository.name}`)
+    request.log(['debug'], `Running hook on repo: ${payload.repository.name}`)
+
     const options = {
       script: hooks[payload.repository.name],
-      callbackUrl: payload.callback_url,
-      request: request
+      callbackUrl: payload.callback_url
     }
-    reply(payload.repository.name).code(204)
-    runScript(options)
+    hookAction(options, (err, data) => {
+      if (err) {
+        request.log(['err'], err)
+      } else {
+        request.log(['debug'], data.script)
+        request.log(['debug'], data.callback)
+      }
+    })
   }
 }

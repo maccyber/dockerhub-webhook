@@ -6,7 +6,7 @@ const dockerhubCallback = require('../lib/dockerhub-callback')
 tap.test('dockerhubCallback missing options', (t) => {
   const options = false
   dockerhubCallback(options, (err) => {
-    t.equal(err.message, 'Missing required input: options', 'Missing options ok')
+    t.equal(err, 'Missing required input: options', 'Missing options ok')
     t.end()
   })
 })
@@ -14,7 +14,7 @@ tap.test('dockerhubCallback missing options', (t) => {
 tap.test('dockerhubCallback missing options.callbackUrl', (t) => {
   const options = {}
   dockerhubCallback(options, (err) => {
-    t.equal(err.message, 'Missing required input: options.callbackUrl', 'Missing options.callbackUrl ok')
+    t.equal(err, 'Missing required input: options.callbackUrl', 'Missing options.callbackUrl ok')
     t.end()
   })
 })
@@ -37,7 +37,7 @@ tap.test('dockerhubCallback', (t) => {
     if (err) {
       throw err
     }
-    t.equal(data.text, `Callback sent to ${options.callbackUrl}`, 'dockerhubCallback ok')
+    t.equal(data.text, `Callback successfully sent to ${options.callbackUrl}`, 'dockerhubCallback ok')
     t.equal(data.response.test, 'ok', 'dockerhubCallback response ok')
     t.end()
   })

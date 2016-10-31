@@ -5,7 +5,7 @@
 
 # dockerhub-webhook
 
-Automatic [Docker](https://www.docker.com) deployment with [Webhooks](https://docs.docker.com/docker-hub/builds/#webhooks) written in [NodeJS](https://nodejs.org).
+Automatic [docker](https://www.docker.com) deployment with [webhooks](https://docs.docker.com/docker-hub/builds/#webhooks).
 
 dockerhub-webhook listens to incoming HTTP POST-requests from hub.docker.com and triggers your specified script(s).
 
@@ -16,6 +16,8 @@ dockerhub-webhook listens to incoming HTTP POST-requests from hub.docker.com and
 * Can be runned in a docker container
 * Supports updating multiple docker images
 * Scripts can trigger docker or docker-compose
+* Used in production
+* Good logging
 
 # Create a token
 Create a secret token with ``openssl``, ``uuidgen`` or something else. Don't use any slashes since token is going to be used in the URL.

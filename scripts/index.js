@@ -2,5 +2,6 @@
 
 module.exports = {
   'testhook': 'hello.sh', // Name of reponame : Script
-  'maccyber.io': 'maccyber.io.sh'
+  'maccyber.io': 'maccyber.io.sh',
+  'fail': 'fail.sh'
 }

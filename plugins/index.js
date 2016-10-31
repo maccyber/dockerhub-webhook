@@ -7,13 +7,17 @@ const goodOptions = {
     interval: 900000
   },
   reporters: {
-    console: [{
-      module: 'good-squeeze',
-      name: 'Squeeze',
-      args: [{ log: '*', ops: '*', error: '*', request: '*', response: '*' }]
-    }, {
-      module: 'good-console'
-    }, 'stdout']
+    console: [
+      {
+        module: 'good-squeeze',
+        name: 'Squeeze',
+        args: [{ log: '*', ops: '*', error: '*', request: '*', response: '*' }]
+      },
+      {
+        module: 'good-console'
+      },
+      'stdout'
+    ]
   }
 }
 
