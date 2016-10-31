@@ -1,5 +1,7 @@
 'use strict'
 
+const good = require('good')
+
 const goodOptions = {
   ops: {
     interval: 900000
@@ -17,7 +19,7 @@ const goodOptions = {
 
 module.exports = [
   {
-    register: require('good'),
+    register: good,
     options: goodOptions
   }
 ]

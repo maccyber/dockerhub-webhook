@@ -1,10 +1,11 @@
 [![Build Status](https://travis-ci.org/maccyber/dockerhub-webhook.svg?branch=master)](https://travis-ci.org/maccyber/dockerhub-webhook)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 [![Coverage Status](https://coveralls.io/repos/github/maccyber/dockerhub-webhook/badge.svg)](https://coveralls.io/github/maccyber/dockerhub-webhook)
+[![Code Climate](https://codeclimate.com/github/maccyber/dockerhub-webhook/badges/gpa.svg)](https://codeclimate.com/github/maccyber/dockerhub-webhook)
 
 # dockerhub-webhook
 
-Automatic [Docker](https://www.docker.com) deployment with [Webhooks](https://docs.docker.com/docker-hub/builds/#webhooks).
+Automatic [Docker](https://www.docker.com) deployment with [Webhooks](https://docs.docker.com/docker-hub/builds/#webhooks) written in [NodeJS](https://nodejs.org).
 
 dockerhub-webhook listens to incoming HTTP POST-requests from hub.docker.com and triggers your specified script(s).
 
