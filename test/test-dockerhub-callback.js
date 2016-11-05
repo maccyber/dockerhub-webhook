@@ -37,7 +37,7 @@ tap.test('dockerhubCallback', (t) => {
     if (err) {
       throw err
     }
-    t.equal(data.text, `Callback successfully sent to ${options.callbackUrl}`, 'dockerhubCallback ok')
+    t.equal(data.text, `Callback sent to ${options.callbackUrl}`, 'dockerhubCallback ok')
     t.equal(data.response.test, 'ok', 'dockerhubCallback response ok')
     t.end()
   })
