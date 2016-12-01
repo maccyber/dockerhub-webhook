@@ -52,7 +52,7 @@
     "good-console": "6.3.1",
     "good-squeeze": "5.0.1",
     "hapi": "16.0.0",
-    "joi": "10.0.1",
+    "joi": "10.0.2",
     "request": "2.79.0"
   }
 }
