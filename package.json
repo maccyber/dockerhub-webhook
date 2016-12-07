@@ -1,6 +1,6 @@
 {
   "name": "dockerhub-webhook",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Docker hub webhook",
   "license": "MIT",
   "author": {
