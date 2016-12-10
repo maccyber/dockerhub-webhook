@@ -4,8 +4,8 @@
 #
 ###########################################################
 
-# Setting the base to nodejs 6
-FROM mhart/alpine-node:6
+# Setting the base to nodejs 7
+FROM mhart/alpine-node:7
 
 # Maintainer
 MAINTAINER Jonas Enge

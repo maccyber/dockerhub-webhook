@@ -2,7 +2,8 @@
 
 const Boom = require('boom')
 const config = require('../config')
-const hookAction = require('../lib/hook-action')
+const runScript = require('../lib/run-script')
+const dockerhubCallback = require('../lib/dockerhub-callback')
 
 module.exports = (request, reply) => {
   const hooks = require('../scripts')
@@ -35,13 +36,13 @@ module.exports = (request, reply) => {
       script: hooks[payload.repository.name],
       callbackUrl: payload.callback_url
     }
-    hookAction(options, (err, data) => {
-      if (err) {
-        request.log(['err'], err)
-      } else {
-        request.log(['debug'], data.script)
+    runScript(options)
+      .then(dockerhubCallback)
+      .then((data) => {
+        request.log(['debug'], data.script.result)
         request.log(['debug'], data.callback)
-      }
-    })
+      }).catch((err) => {
+        request.log(['err'], err)
+      })
   }
 }

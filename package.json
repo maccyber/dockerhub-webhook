@@ -1,6 +1,6 @@
 {
   "name": "dockerhub-webhook",
-  "version": "2.0.5",
+  "version": "3.0.0",
   "description": "Docker hub webhook",
   "license": "MIT",
   "author": {
@@ -10,7 +10,7 @@
   },
   "main": "index.js",
   "engines": {
-    "node": ">=4.5.0"
+    "node": ">=6.0.0"
   },
   "scripts": {
     "start": "node index.js",
