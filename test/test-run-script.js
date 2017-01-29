@@ -52,7 +52,21 @@ tap.test('runScript run through', (t) => {
   }
   runScript(options)
   .then((data) => {
-    t.equal(data.description, 'Running dummy script\n', 'runScript runs ok')
+    t.equal(data.description, 'Running dummy script\n\n\n', 'runScript runs ok')
+    t.end()
+  })
+  .catch((err) => {
+    throw err
+  })
+})
+
+tap.test('runScript run through with parameters', (t) => {
+  const options = {
+    script: 'hello.sh parameter1 parameter2'
+  }
+  runScript(options)
+  .then((data) => {
+    t.equal(data.description, 'Running dummy script\nparameter1\nparameter2\n', 'runScript runs ok')
     t.end()
   })
   .catch((err) => {
