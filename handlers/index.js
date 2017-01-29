@@ -9,7 +9,7 @@ module.exports = (request, reply) => {
   const hooks = require('../scripts')
   const token = request.params.token
   const payload = request.payload
-  let err
+  let err = false
 
   if (token !== config.token) {
     err = 'Invalid token'
@@ -39,9 +39,11 @@ module.exports = (request, reply) => {
     runScript(options)
       .then(dockerhubCallback)
       .then((data) => {
+        console.log(data)
         request.log(['debug'], data.script.result)
         request.log(['debug'], data.callback)
       }).catch((err) => {
+        console.log(err)
         request.log(['err'], err)
       })
   }
