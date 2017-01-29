@@ -2,8 +2,8 @@
 
 * [#28](https://github.com/maccyber/dockerhub-webhook/issues/28)
   Adds ability to run script with parameters
-  ([@maccyber)
+  (@maccyber)
 
 * [#28](https://github.com/maccyber/dockerhub-webhook/issues/28)
   Changed the use of name to repo_name. Now you have to define namespace and image name i scripts/index.js (e.g. maccyber/maccyber.io)
-  ([@maccyber)
+  (@maccyber)
