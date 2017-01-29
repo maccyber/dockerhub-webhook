@@ -63,7 +63,7 @@ tap.test('Missing payload.repository', (t) => {
   })
 })
 
-tap.test('Missing payload.repository.name', (t) => {
+tap.test('Missing payload.repository.repo_name', (t) => {
   const options = {
     method: 'POST',
     url: `${config.route}/${config.token}`,
@@ -73,14 +73,14 @@ tap.test('Missing payload.repository.name', (t) => {
   }
   server.inject(options, (res) => {
     t.equal(res.statusCode, 400, 'Status code ok')
-    t.equal(res.result.message, 'Missing payload.repository.name', 'Error message ok')
+    t.equal(res.result.message, 'Missing payload.repository.repo_name', 'Error message ok')
     t.end()
   })
 })
 
 tap.test('does not exist in scripts/index.js', (t) => {
   const file = require('./data/dockerhub.json')
-  file.repository.name = 'wrong'
+  file.repository.repo_name = 'wrong'
   const options = {
     method: 'POST',
     url: `${config.route}/${config.token}`,
@@ -88,14 +88,14 @@ tap.test('does not exist in scripts/index.js', (t) => {
   }
   server.inject(options, (res) => {
     t.equal(res.statusCode, 400, 'Status code ok')
-    t.equal(res.result.message, `${file.repository.name} does not exist in scripts/index.js`, 'Error message ok')
+    t.equal(res.result.message, `${file.repository.repo_name} does not exist in scripts/index.js`, 'Error message ok')
     t.end()
   })
 })
 
 tap.test('Valid dockerhub JSON', (t) => {
   const file = require('./data/dockerhub.json')
-  file.repository.name = 'testhook'
+  file.repository.repo_name = 'maccyber/testhook'
   const options = {
     method: 'POST',
     url: `${config.route}/${config.token}`,

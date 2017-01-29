@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = {
-  'testhook': 'hello.sh parameter1 parameter2', // Name of reponame : Script
-  'maccyber.io': 'maccyber.io.sh',
+  'maccyber/testhook': 'hello.sh parameter1 parameter2', // namespace/repo_name : script <parameters>
+  'maccyber/maccyber.io': 'maccyber.io.sh',
   'fail': 'fail.sh'
 }

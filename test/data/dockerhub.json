@@ -15,9 +15,9 @@
     "is_private": true,
     "is_trusted": true,
     "name": "testhook",
-    "namespace": "svendowideit",
-    "owner": "svendowideit",
-    "repo_name": "svendowideit/testhook",
+    "namespace": "maccyber",
+    "owner": "maccyber",
+    "repo_name": "maccyber/testhook",
     "repo_url": "https://registry.hub.docker.com/u/svendowideit/testhook/",
     "star_count": 0,
     "status": "Active"

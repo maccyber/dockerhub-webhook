@@ -17,23 +17,23 @@ module.exports = (request, reply) => {
     err = 'Missing payload'
   } else if (!payload.repository) {
     err = 'Missing payload.repository'
-  } else if (!payload.repository.name) {
-    err = 'Missing payload.repository.name'
-  } else if (!hooks[payload.repository.name]) {
-    err = `${payload.repository.name} does not exist in scripts/index.js`
+  } else if (!payload.repository.repo_name) {
+    err = 'Missing payload.repository.repo_name'
+  } else if (!hooks[payload.repository.repo_name]) {
+    err = `${payload.repository.repo_name} does not exist in scripts/index.js`
   }
   if (err) {
     request.log(['debug'], err)
     reply(Boom.badRequest(err))
   } else {
-    reply(payload.repository.name).code(204)
+    reply(payload.repository.repo_name).code(204)
 
     request.log(['debug'], 'Payload from docker hub:')
     request.log(['debug'], payload)
-    request.log(['debug'], `Running hook on repo: ${payload.repository.name}`)
+    request.log(['debug'], `Running hook on repo: ${payload.repository.repo_name}`)
 
     const options = {
-      script: hooks[payload.repository.name],
+      script: hooks[payload.repository.repo_name],
       callbackUrl: payload.callback_url
     }
     runScript(options)
