@@ -34,13 +34,14 @@ module.exports = (request, reply) => {
 
     const options = {
       script: hooks[payload.repository.repo_name],
-      callbackUrl: payload.callback_url
+      callbackUrl: payload.callback_url,
+      callbackDisable: config.callbackDisable || false
     }
     runScript(options)
       .then(dockerhubCallback)
       .then((data) => {
         request.log(['debug'], data.script.result)
-        request.log(['debug'], data.callback)
+        request.log(['debug'], data.callback || 'Callback deactivated')
       }).catch((err) => {
         request.log(['err'], err)
       })

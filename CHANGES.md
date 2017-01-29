@@ -1,3 +1,10 @@
+## 4.0.1 (2017-01-29)
+
+* [#28]https://github.com/maccyber/dockerhub-webhook/issues/28)
+  Added ability to disable callback i config
+    ([@maccyber)
+    
+
 ## 4.0.0 (2017-01-29)
 
 * [#28]https://github.com/maccyber/dockerhub-webhook/issues/28)

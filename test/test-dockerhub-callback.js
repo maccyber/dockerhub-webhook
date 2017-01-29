@@ -32,6 +32,17 @@ tap.test('dockerhubCallback invalid URI', (t) => {
   })
 })
 
+tap.test('dockerhubCallback callback off', (t) => {
+  const options = {
+    callbackUrl: 'https://maccyber.io/api/test',
+    callbackDisable: true
+  }
+  return dockerhubCallback(options)
+  .then((data) => {
+    t.notOk(data.callback, 'dockerhubCallback off ok')
+  })
+})
+
 tap.test('dockerhubCallback', (t) => {
   const options = {
     callbackUrl: 'https://maccyber.io/api/test'
