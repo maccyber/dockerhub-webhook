@@ -39,11 +39,9 @@ module.exports = (request, reply) => {
     runScript(options)
       .then(dockerhubCallback)
       .then((data) => {
-        console.log(data)
         request.log(['debug'], data.script.result)
         request.log(['debug'], data.callback)
       }).catch((err) => {
-        console.log(err)
         request.log(['err'], err)
       })
   }
