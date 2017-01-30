@@ -6,5 +6,5 @@ module.exports = {
   port: envs.SERVER_PORT || 3000,
   route: envs.API_ROUTE || '/api',
   token: envs.TOKEN || 'abc123',
-  callbackDisable: envs.CALLBACK_OFF || false // set to true if you want to disable callback to dockerhub
+  callbackDisable: envs.CALLBACK_DISABLE || false // set to true if you want to disable callback to dockerhub
 }
