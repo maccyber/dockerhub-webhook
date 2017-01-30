@@ -14,6 +14,7 @@ MAINTAINER Jonas Enge
 
 # Installs docker
 RUN apk add --update --no-cache docker py-pip
+RUN apk add bash bash-doc bash-completion
 RUN pip install docker-compose
 
 # Extra tools for native dependencies
