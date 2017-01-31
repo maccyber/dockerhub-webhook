@@ -23,7 +23,7 @@ dockerhub-webhook listens to incoming HTTP POST-requests from hub.docker.com and
 Create a secret token with ``openssl``, ``uuidgen`` or something else. Don't use any slashes since token is going to be used in the URL.
 
 ```sh
-export TOKEN=$(openssl rand -base64 30 | sed 's=/=\\/=g')
+export TOKEN=$(uuidgen)
 echo $TOKEN
 ```
 
