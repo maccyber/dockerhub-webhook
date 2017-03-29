@@ -43,7 +43,7 @@
     "coveralls": "2.11.16",
     "nsp": "2.6.2",
     "standard": "9.0.2",
-    "tap": "10.3.0"
+    "tap": "10.3.1"
   },
   "dependencies": {
     "boom": "4.3.1",
