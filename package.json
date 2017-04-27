@@ -40,7 +40,7 @@
     "url": "http://github.com/maccyber/dockerhub-webhook/issues"
   },
   "devDependencies": {
-    "coveralls": "2.13.0",
+    "coveralls": "2.13.1",
     "nsp": "2.6.2",
     "standard": "10.0.2",
     "tap": "10.3.2"
