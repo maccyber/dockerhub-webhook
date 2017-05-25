@@ -46,7 +46,7 @@
     "tap": "10.3.2"
   },
   "dependencies": {
-    "boom": "4.3.1",
+    "boom": "5.0.0",
     "file-exists": "3.0.2",
     "good": "7.1.0",
     "good-console": "6.4.0",
