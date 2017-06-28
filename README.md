@@ -5,6 +5,8 @@
 
 # dockerhub-webhook
 
+**Unsupported!** See [maccyber/micro-dockerhub-hook](https://github.com/maccyber/micro-dockerhub-hook) instead.
+
 Automatic [docker](https://www.docker.com) deployment with [webhooks](https://docs.docker.com/docker-hub/builds/#webhooks).
 
 dockerhub-webhook listens to incoming HTTP POST-requests from hub.docker.com and triggers your specified script(s).
