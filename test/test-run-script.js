@@ -27,7 +27,7 @@ tap.test('runScript script do not exist', (t) => {
   }
   runScript(options)
   .catch((err) => {
-    t.match(err.message, 'does not exist', 'runScript script do not exist ok')
+    t.match(err.message, 'Command failed', 'runScript script do not exist ok')
     t.end()
   })
 })
