@@ -5,6 +5,8 @@
 
 # dockerhub-webhook
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/maccyber/dockerhub-webhook.svg)](https://greenkeeper.io/)
+
 **Unsupported!** See [maccyber/micro-dockerhub-hook](https://github.com/maccyber/micro-dockerhub-hook) instead.
 
 Automatic [docker](https://www.docker.com) deployment with [webhooks](https://docs.docker.com/docker-hub/builds/#webhooks).
